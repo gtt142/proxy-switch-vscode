@@ -1,0 +1,62 @@
+{
+  "name": "proxy-switch",
+  "displayName": "ProxySwitch",
+  "description": "Turn on/off proxy",
+  "version": "0.1.0",
+  "publisher": "com.github.gtt142",
+  "icon": "ps-logo.ico",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gtt142/proxy-switch-vscode.git"
+  },
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "proxy-switch.healthcheck",
+        "title": "ProxySwitch / Healthcheck"
+      },
+      {
+        "command": "proxy-switch.setHttpProxy",
+        "title": "ProxySwitch / Set HTTP proxy"
+      },
+      {
+        "command": "proxy-switch.turnOffHttpProxy",
+        "title": "ProxySwitch / Turn off HTTP proxy"
+      },
+      {
+        "command": "proxy-switch.reloadWindow",
+        "title": "ProxySwitch / Reload window (VS Code)"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.87.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vsce": "^2.15.0"
+  }
+}
